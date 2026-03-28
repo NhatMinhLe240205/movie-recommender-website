@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+cinematch-frontend/node_modules/
+cinematch-frontend/dist/
+.vscode/

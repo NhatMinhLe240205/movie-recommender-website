@@ -1,0 +1,203 @@
+.app { max-width: 640px; margin: 0 auto; padding: 0 24px 80px; }
+
+.header {
+  text-align: center;
+  padding: 64px 0 48px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 16px;
+  animation: fadeUp 0.4s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.input {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  outline: none;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+
+.input:focus { border-color: var(--gold-dim); }
+.input::placeholder { color: var(--muted); }
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--gold);
+  color: #0b0b0f;
+  border: none;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+}
+
+.btn:hover { opacity: 0.85; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.selected-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.selected-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.selected-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.results-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.movie-list { display: flex; flex-direction: column; gap: 10px; }
+
+.movie-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  transition: border-color 0.2s, transform 0.2s;
+  animation: fadeUp 0.3s both;
+}
+
+.movie-card:hover {
+  border-color: rgba(201,168,76,0.3);
+  transform: translateX(4px);
+}
+
+.movie-rank {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--gold-dim);
+  font-size: 1rem;
+  min-width: 28px;
+}
+
+.movie-title { font-size: 0.95rem; margin-bottom: 3px; }
+.movie-meta  { font-size: 0.8rem; color: var(--muted); }
+
+.method-picker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.method-btn {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  line-height: 1.6;
+}
+
+.method-btn strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.method-btn.active {
+  border-color: var(--gold-dim);
+  background: rgba(201,168,76,0.07);
+}
+
+.method-btn.active strong { color: var(--gold); }
+
+.search-wrap { position: relative; }
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0; right: 0;
+  background: #1c1c26;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 100;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+}
+
+.drop-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.drop-item:last-child { border-bottom: none; }
+.drop-item:hover { background: rgba(201,168,76,0.07); }
+
+.drop-title { font-size: 0.9rem; color: var(--text); }
+.drop-meta  { font-size: 0.75rem; color: var(--muted); }
